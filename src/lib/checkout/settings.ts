@@ -3,12 +3,12 @@ import { fnv1a } from "./shared";
 // Fill in per store. The one place for these: the checkout, product pages and
 // the server all read them here.
 export const CHECKOUT_SETTINGS = {
-	shipCountries: ["US", "CA", "GB", "AU", "NZ"],
+	shipCountries: ["US"],
 	// Whop's API doesn't expose a seller's "require terms agreement" setting, so
 	// it is set here. A wallet sheet has no terms box, so product pages then show
 	// no wallet buttons.
 	requireTermsAgreement: false,
-	adaptivePricing: true,
+	adaptivePricing: false,
 };
 
 // The shipping countries as every reader takes them, written however the

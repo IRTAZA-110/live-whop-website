@@ -95,31 +95,16 @@ import { useSheetRequests } from "../lib/checkout/use-wallet-sheet";
 // src/lib/checkout/settings.ts, never here: the server and product pages read
 // them there too.
 const STORE = {
-	brandColor: "#000000",
+	brandColor: "#d97706",
 	// Stays white unless the seller asks for another checkout color.
 	pageBackground: "#ffffff",
-	wordmark: { src: "/imported/wordmark.png", alt: "Store" },
+	wordmark: { src: "", alt: "IronCrest Roofing & Exteriors" },
 	// A code a link carries still shows the box when this is false.
 	promoCodeEntry: true,
-	// Shopify's canonical policy paths, matching the shared footer — keep the
-	// two lists pointing at the same pages when tuning them for a store.
 	policyLinks: [
-		{ label: "Refund policy", href: "/policies/refund-policy", inTerms: true },
-		{
-			label: "Privacy policy",
-			href: "/policies/privacy-policy",
-			inTerms: true,
-		},
-		{
-			label: "Terms of service",
-			href: "/policies/terms-of-service",
-			inTerms: true,
-		},
-		{
-			label: "Contact information",
-			href: "/policies/contact-information",
-			inTerms: false,
-		},
+		{ label: "Services", href: "/#services", inTerms: false },
+		{ label: "Financing", href: "/#financing", inTerms: false },
+		{ label: "Contact", href: "/#contact", inTerms: false },
 	],
 };
 
@@ -279,12 +264,37 @@ function SummarySkeleton() {
 function CheckoutHeader() {
 	return (
 		<header className="ck-header">
-			<a href="/" aria-label="Back to store">
-				<img
-					className="ck-wordmark"
-					src={STORE.wordmark.src}
-					alt={STORE.wordmark.alt}
-				/>
+			<a
+				href="/"
+				aria-label="Back to IronCrest Roofing"
+				style={{
+					display: "inline-flex",
+					alignItems: "center",
+					gap: "10px",
+					textDecoration: "none",
+					color: "#0f172a",
+					fontWeight: 800,
+					fontSize: "18px",
+					letterSpacing: "-0.02em",
+				}}
+			>
+				<span
+					style={{
+						display: "inline-flex",
+						alignItems: "center",
+						justifyContent: "center",
+						width: "32px",
+						height: "32px",
+						borderRadius: "8px",
+						background: "#d97706",
+						color: "#0f172a",
+						fontWeight: 900,
+						fontSize: "14px",
+					}}
+				>
+					IR
+				</span>
+				<span>{STORE.wordmark.alt}</span>
 			</a>
 		</header>
 	);
